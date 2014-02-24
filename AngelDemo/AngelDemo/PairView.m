@@ -8,6 +8,7 @@
 
 #import "PairView.h"
 #import "deviceSelector.h"
+#import "InfoScreenViewController.h"
 @interface PairView ()
 
 @end
@@ -88,6 +89,21 @@
     NSLog(@"Found a BLE Device : %@",  sensorTags.count);
 }
 
+
+- (IBAction)angelIconClicked{
+    CBPeripheral *p = [self.sensorTags objectAtIndex: 0];
+    
+    
+    
+    BLEDevice *d = [[BLEDevice alloc]init];
+    
+    d.p = p;
+    d.manager = self.m;
+    d.setupData = [self makeSensorTagConfiguration];
+    
+   
+     [self performSegueWithIdentifier:@"InfoView2" sender:self];
+}
 
 
 #pragma mark - Table view delegate

@@ -13,6 +13,8 @@
 		AC28D85718B8C2CF0054DA9F /* deviceSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = AC28D84F18B8C2CF0054DA9F /* deviceSelector.m */; };
 		AC28D85818B8C2CF0054DA9F /* Sensors.m in Sources */ = {isa = PBXBuildFile; fileRef = AC28D85118B8C2CF0054DA9F /* Sensors.m */; };
 		AC28D85918B8C2CF0054DA9F /* SensorTagApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC28D85318B8C2CF0054DA9F /* SensorTagApplicationViewController.m */; };
+		ACD9DE2C18BB7C6600DD2380 /* InfoScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD9DE2B18BB7C6600DD2380 /* InfoScreenViewController.m */; };
+		ACD9DFD318BB969C00DD2380 /* tabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD9DFD218BB969C00DD2380 /* tabViewController.m */; };
 		ACEDC7F418BA0AB100A96FB5 /* angelIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ACEDC7F318BA0AB100A96FB5 /* angelIcon.png */; };
 		ACEDC7F618BA0B0800A96FB5 /* angel2.png in Resources */ = {isa = PBXBuildFile; fileRef = ACEDC7F518BA0B0800A96FB5 /* angel2.png */; };
 		ACEDC7F718BA2CB800A96FB5 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C7104B18B65A5800245567 /* Main_iPhone.storyboard */; };
@@ -60,6 +62,10 @@
 		AC28D85118B8C2CF0054DA9F /* Sensors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sensors.m; path = "../SensorTag/Sensor Example Source Code 1.1.0/SensorTagEX/Sensors.m"; sourceTree = "<group>"; };
 		AC28D85218B8C2CF0054DA9F /* SensorTagApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SensorTagApplicationViewController.h; path = "../SensorTag/Sensor Example Source Code 1.1.0/SensorTagEX/SensorTagApplicationViewController.h"; sourceTree = "<group>"; };
 		AC28D85318B8C2CF0054DA9F /* SensorTagApplicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SensorTagApplicationViewController.m; path = "../SensorTag/Sensor Example Source Code 1.1.0/SensorTagEX/SensorTagApplicationViewController.m"; sourceTree = "<group>"; };
+		ACD9DE2A18BB7C6600DD2380 /* InfoScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoScreenViewController.h; sourceTree = "<group>"; };
+		ACD9DE2B18BB7C6600DD2380 /* InfoScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoScreenViewController.m; sourceTree = "<group>"; };
+		ACD9DFD118BB969C00DD2380 /* tabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tabViewController.h; sourceTree = "<group>"; };
+		ACD9DFD218BB969C00DD2380 /* tabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tabViewController.m; sourceTree = "<group>"; };
 		ACEDC7F318BA0AB100A96FB5 /* angelIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = angelIcon.png; path = ../angelIcon.png; sourceTree = "<group>"; };
 		ACEDC7F518BA0B0800A96FB5 /* angel2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = angel2.png; path = ../angel2.png; sourceTree = "<group>"; };
 		B004AAC118B75504003FA812 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
@@ -187,6 +193,10 @@
 				B0C7104018B65A5800245567 /* Supporting Files */,
 				B092B41C18B670A50013653D /* PairView.h */,
 				B092B41D18B670A50013653D /* PairView.m */,
+				ACD9DE2A18BB7C6600DD2380 /* InfoScreenViewController.h */,
+				ACD9DE2B18BB7C6600DD2380 /* InfoScreenViewController.m */,
+				ACD9DFD118BB969C00DD2380 /* tabViewController.h */,
+				ACD9DFD218BB969C00DD2380 /* tabViewController.m */,
 			);
 			path = AngelDemo;
 			sourceTree = "<group>";
@@ -314,7 +324,9 @@
 				AC28D85718B8C2CF0054DA9F /* deviceSelector.m in Sources */,
 				B0C7105318B65A5800245567 /* ViewController.m in Sources */,
 				B0C7104A18B65A5800245567 /* AppDelegate.m in Sources */,
+				ACD9DFD318BB969C00DD2380 /* tabViewController.m in Sources */,
 				B0C7104618B65A5800245567 /* main.m in Sources */,
+				ACD9DE2C18BB7C6600DD2380 /* InfoScreenViewController.m in Sources */,
 				AC28D85818B8C2CF0054DA9F /* Sensors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,6 +462,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/ugurkirbac/Desktop/iOS\\ Angel\\ Demo/AngelDemo/AngelDemo/ZBarSDK",
+					"/Users/Guest/Desktop/iOS-Angel-Demo-master/AngelDemo/AngelDemo/ZBarSDK",
+					"/Users/Guest/Desktop/iOS-Angel-Demo-master/AngelDemo/Examples/EmbedReader/ZBarSDK",
+					"/Users/Guest/Desktop/iOS-Angel-Demo-master/AngelDemo/Examples/ReaderSample/ZBarSDK",
+					"/Users/Guest/Desktop/iOS-Angel-Demo-master/AngelDemo/Examples/readertest/ZBarSDK",
+					"/Users/Guest/Desktop/iOS-Angel-Demo-master/AngelDemo/Examples/TabReader/ZBarSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -470,6 +487,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/ugurkirbac/Desktop/iOS\\ Angel\\ Demo/AngelDemo/AngelDemo/ZBarSDK",
+					"/Users/Guest/Desktop/iOS-Angel-Demo-master/AngelDemo/AngelDemo/ZBarSDK",
+					"/Users/Guest/Desktop/iOS-Angel-Demo-master/AngelDemo/Examples/EmbedReader/ZBarSDK",
+					"/Users/Guest/Desktop/iOS-Angel-Demo-master/AngelDemo/Examples/ReaderSample/ZBarSDK",
+					"/Users/Guest/Desktop/iOS-Angel-Demo-master/AngelDemo/Examples/readertest/ZBarSDK",
+					"/Users/Guest/Desktop/iOS-Angel-Demo-master/AngelDemo/Examples/TabReader/ZBarSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

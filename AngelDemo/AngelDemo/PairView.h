@@ -28,6 +28,7 @@
 - (IBAction)switchView:(id)sender;
 - (IBAction)showIcon;
 - (IBAction)hideIcon;
+- (IBAction)angelIconClicked;
 
 -(NSMutableDictionary *) makeSensorTagConfiguration;
 
