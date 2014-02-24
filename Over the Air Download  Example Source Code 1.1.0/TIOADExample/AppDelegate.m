@@ -1,18 +1,22 @@
-//
-//  AppDelegate.m
-//  AngelDemo
-//
-//  Created by Ugur Kirbac on 20/02/14.
-//  Copyright (c) 2014 Ugur Kirbac. All rights reserved.
-//
+/*
+ AppDelegate.m
+ TIOADExample
+ Created by Ole Andreas Torvmark on 1/7/13.
+ Copyright (c) 2013 Texas Instruments. All rights reserved.
+
+ */
 
 #import "AppDelegate.h"
-#import "deviceSelector.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    // Override point for customization after application launch.
+
+    
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
     UIViewController *vc = [sb instantiateInitialViewController];
     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     
@@ -33,7 +37,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
@@ -50,6 +54,20 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(BOOL) application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    NSLog(@"Opened by other application with URL : %@",url);
+    
+    NSData *FWFile = [NSData dataWithContentsOfURL:url];
+    
+    NSString *root = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *filePath = [root stringByAppendingPathComponent:[url lastPathComponent]];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Saving firmware file" message:[NSString stringWithFormat:@"Firmware file saved to shared files with filename : %@",[url lastPathComponent]] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];
+    [FWFile writeToFile:filePath atomically:YES];
+    NSLog(@"Wrote file : %@, %d OK !",filePath,FWFile.length);
+    return YES;
 }
 
 @end

@@ -1,18 +1,20 @@
 //
-//  tabViewController.m
+//  infoViewController.m
 //  AngelDemo
 //
 //  Created by Guest Account on 2/24/14.
 //  Copyright (c) 2014 Ugur Kirbac. All rights reserved.
 //
 
-#import "tabViewController.h"
+#import "infoViewController.h"
 
-@interface tabViewController ()
+@interface infoViewController ()
 
 @end
 
-@implementation tabViewController
+@implementation infoViewController
+@synthesize humidityValue,tempValue,motionValue;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,8 +38,6 @@
 }
 
 
-
-/*
 
 -(void) configureSensorTag {
     // Configure sensortag, turning on Sensors and setting update period for sensors etc ...
@@ -88,14 +88,7 @@
         cUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"IR temperature data UUID"]];
         [BLEUtility setNotificationForCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID enable:NO];
     }
-    if ([self sensorEnabled:@"Accelerometer active"]) {
-        CBUUID *sUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Accelerometer service UUID"]];
-        CBUUID *cUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Accelerometer config UUID"]];
-        uint8_t data = 0x00;
-        [BLEUtility writeCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID data:[NSData dataWithBytes:&data length:1]];
-        cUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Accelerometer data UUID"]];
-        [BLEUtility setNotificationForCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID enable:NO];
-    }
+    
     if ([self sensorEnabled:@"Humidity active"]) {
         CBUUID *sUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Humidity service UUID"]];
         CBUUID *cUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Humidity config UUID"]];
@@ -104,14 +97,7 @@
         cUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Humidity data UUID"]];
         [BLEUtility setNotificationForCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID enable:NO];
     }
-    if ([self sensorEnabled:@"Magnetometer active"]) {
-        CBUUID *sUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Magnetometer service UUID"]];
-        CBUUID *cUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Magnetometer config UUID"]];
-        uint8_t data = 0x00;
-        [BLEUtility writeCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID data:[NSData dataWithBytes:&data length:1]];
-        cUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Magnetometer data UUID"]];
-        [BLEUtility setNotificationForCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID enable:NO];
-    }
+
     if ([self sensorEnabled:@"Gyroscope active"]) {
         CBUUID *sUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Gyroscope service UUID"]];
         CBUUID *cUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Gyroscope config UUID"]];
@@ -120,16 +106,7 @@
         cUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Gyroscope data UUID"]];
         [BLEUtility setNotificationForCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID enable:NO];
     }
-    if ([self sensorEnabled:@"Barometer active"]) {
-        CBUUID *sUUID = [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Barometer service UUID"]];
-        CBUUID *cUUID = [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Barometer config UUID"]];
-        //Disable sensor
-        uint8_t data = 0x00;
-        [BLEUtility writeCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID data:[NSData dataWithBytes:&data length:1]];
-        cUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Barometer data UUID"]];
-        [BLEUtility setNotificationForCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID enable:NO];
-        
-    }
+
 }
 
 -(bool)sensorEnabled:(NSString *)Sensor {
@@ -184,6 +161,9 @@
     if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:[self.d.setupData valueForKey:@"IR temperature data UUID"]]]) {
         float tAmb = [sensorTMP006 calcTAmb:characteristic.value];
         float tObj = [sensorTMP006 calcTObj:characteristic.value];
+        
+        self.tempValue.text =@"TEMp";
+        
         self.currentVal.tAmb = tAmb;
         self.currentVal.tIR = tObj;
         
@@ -207,7 +187,7 @@
         self.currentVal.gyroZ = z;
         
     }
-
+    
 }
 
 -(void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
@@ -219,5 +199,6 @@
     [self.gyroSensor calibrate];
 }
 
-*/
+
+
 @end

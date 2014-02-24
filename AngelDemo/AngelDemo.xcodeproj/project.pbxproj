@@ -13,8 +13,8 @@
 		AC28D85718B8C2CF0054DA9F /* deviceSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = AC28D84F18B8C2CF0054DA9F /* deviceSelector.m */; };
 		AC28D85818B8C2CF0054DA9F /* Sensors.m in Sources */ = {isa = PBXBuildFile; fileRef = AC28D85118B8C2CF0054DA9F /* Sensors.m */; };
 		AC28D85918B8C2CF0054DA9F /* SensorTagApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC28D85318B8C2CF0054DA9F /* SensorTagApplicationViewController.m */; };
-		ACD9DE2C18BB7C6600DD2380 /* InfoScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD9DE2B18BB7C6600DD2380 /* InfoScreenViewController.m */; };
 		ACD9DFD318BB969C00DD2380 /* tabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD9DFD218BB969C00DD2380 /* tabViewController.m */; };
+		ACD9DFD618BBA4F800DD2380 /* infoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD9DFD518BBA4F800DD2380 /* infoViewController.m */; };
 		ACEDC7F418BA0AB100A96FB5 /* angelIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ACEDC7F318BA0AB100A96FB5 /* angelIcon.png */; };
 		ACEDC7F618BA0B0800A96FB5 /* angel2.png in Resources */ = {isa = PBXBuildFile; fileRef = ACEDC7F518BA0B0800A96FB5 /* angel2.png */; };
 		ACEDC7F718BA2CB800A96FB5 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C7104B18B65A5800245567 /* Main_iPhone.storyboard */; };
@@ -32,7 +32,7 @@
 		B0C7104418B65A5800245567 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0C7104218B65A5800245567 /* InfoPlist.strings */; };
 		B0C7104618B65A5800245567 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C7104518B65A5800245567 /* main.m */; };
 		B0C7104A18B65A5800245567 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C7104918B65A5800245567 /* AppDelegate.m */; };
-		B0C7105318B65A5800245567 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C7105218B65A5800245567 /* ViewController.m */; };
+		B0C7105318B65A5800245567 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C7105218B65A5800245567 /* loginViewController.m */; };
 		B0C7105518B65A5900245567 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C7105418B65A5800245567 /* Images.xcassets */; };
 		B0C7105C18B65A5900245567 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0C7105B18B65A5900245567 /* XCTest.framework */; };
 		B0C7105D18B65A5900245567 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0C7103918B65A5800245567 /* Foundation.framework */; };
@@ -62,10 +62,10 @@
 		AC28D85118B8C2CF0054DA9F /* Sensors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sensors.m; path = "../SensorTag/Sensor Example Source Code 1.1.0/SensorTagEX/Sensors.m"; sourceTree = "<group>"; };
 		AC28D85218B8C2CF0054DA9F /* SensorTagApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SensorTagApplicationViewController.h; path = "../SensorTag/Sensor Example Source Code 1.1.0/SensorTagEX/SensorTagApplicationViewController.h"; sourceTree = "<group>"; };
 		AC28D85318B8C2CF0054DA9F /* SensorTagApplicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SensorTagApplicationViewController.m; path = "../SensorTag/Sensor Example Source Code 1.1.0/SensorTagEX/SensorTagApplicationViewController.m"; sourceTree = "<group>"; };
-		ACD9DE2A18BB7C6600DD2380 /* InfoScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoScreenViewController.h; sourceTree = "<group>"; };
-		ACD9DE2B18BB7C6600DD2380 /* InfoScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoScreenViewController.m; sourceTree = "<group>"; };
 		ACD9DFD118BB969C00DD2380 /* tabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tabViewController.h; sourceTree = "<group>"; };
 		ACD9DFD218BB969C00DD2380 /* tabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tabViewController.m; sourceTree = "<group>"; };
+		ACD9DFD418BBA4F800DD2380 /* infoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = infoViewController.h; sourceTree = "<group>"; };
+		ACD9DFD518BBA4F800DD2380 /* infoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = infoViewController.m; sourceTree = "<group>"; };
 		ACEDC7F318BA0AB100A96FB5 /* angelIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = angelIcon.png; path = ../angelIcon.png; sourceTree = "<group>"; };
 		ACEDC7F518BA0B0800A96FB5 /* angel2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = angel2.png; path = ../angel2.png; sourceTree = "<group>"; };
 		B004AAC118B75504003FA812 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
@@ -88,8 +88,8 @@
 		B0C7104918B65A5800245567 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B0C7104C18B65A5800245567 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		B0C7104F18B65A5800245567 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		B0C7105118B65A5800245567 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B0C7105218B65A5800245567 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B0C7105118B65A5800245567 /* loginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
+		B0C7105218B65A5800245567 /* loginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		B0C7105418B65A5800245567 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B0C7105A18B65A5900245567 /* AngelDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AngelDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C7105B18B65A5900245567 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -123,6 +123,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ACD9DFD718BBB5F600DD2380 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B092B41F18B683370013653D /* pair.png */,
+				B092B42318B68ED70013653D /* Default.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		ACD9DFD818BBB61000DD2380 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B092B41C18B670A50013653D /* PairView.h */,
+				B0C7105118B65A5800245567 /* loginViewController.h */,
+				B0C7105218B65A5800245567 /* loginViewController.m */,
+				B092B41D18B670A50013653D /* PairView.m */,
+				ACD9DFD418BBA4F800DD2380 /* infoViewController.h */,
+				ACD9DFD518BBA4F800DD2380 /* infoViewController.m */,
+				B0C7104818B65A5800245567 /* AppDelegate.h */,
+				B0C7104918B65A5800245567 /* AppDelegate.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		ACD9DFD918BBB61C00DD2380 /* Device Selection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Device Selection";
+			sourceTree = "<group>";
+		};
+		ACD9DFDA18BBB63700DD2380 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B0C7104B18B65A5800245567 /* Main_iPhone.storyboard */,
+				B0C7104E18B65A5800245567 /* Main_iPad.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		B004AAC618B759E2003FA812 /* SensorTag */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,20 +221,12 @@
 		B0C7103F18B65A5800245567 /* AngelDemo */ = {
 			isa = PBXGroup;
 			children = (
-				B092B42318B68ED70013653D /* Default.png */,
-				B0C7104818B65A5800245567 /* AppDelegate.h */,
-				B092B41F18B683370013653D /* pair.png */,
-				B0C7104918B65A5800245567 /* AppDelegate.m */,
-				B0C7104B18B65A5800245567 /* Main_iPhone.storyboard */,
-				B0C7104E18B65A5800245567 /* Main_iPad.storyboard */,
-				B0C7105118B65A5800245567 /* ViewController.h */,
-				B0C7105218B65A5800245567 /* ViewController.m */,
+				ACD9DFDA18BBB63700DD2380 /* Storyboards */,
+				ACD9DFD918BBB61C00DD2380 /* Device Selection */,
+				ACD9DFD818BBB61000DD2380 /* Application */,
+				ACD9DFD718BBB5F600DD2380 /* Images */,
 				B0C7105418B65A5800245567 /* Images.xcassets */,
 				B0C7104018B65A5800245567 /* Supporting Files */,
-				B092B41C18B670A50013653D /* PairView.h */,
-				B092B41D18B670A50013653D /* PairView.m */,
-				ACD9DE2A18BB7C6600DD2380 /* InfoScreenViewController.h */,
-				ACD9DE2B18BB7C6600DD2380 /* InfoScreenViewController.m */,
 				ACD9DFD118BB969C00DD2380 /* tabViewController.h */,
 				ACD9DFD218BB969C00DD2380 /* tabViewController.m */,
 			);
@@ -319,14 +351,14 @@
 				AC28D85918B8C2CF0054DA9F /* SensorTagApplicationViewController.m in Sources */,
 				AC28D85618B8C2CF0054DA9F /* deviceCellTemplate.m in Sources */,
 				AC28D85518B8C2CF0054DA9F /* BLEUtility.m in Sources */,
+				ACD9DFD618BBA4F800DD2380 /* infoViewController.m in Sources */,
 				B092B41E18B670A50013653D /* PairView.m in Sources */,
 				AC28D85418B8C2CF0054DA9F /* BLEDevice.m in Sources */,
 				AC28D85718B8C2CF0054DA9F /* deviceSelector.m in Sources */,
-				B0C7105318B65A5800245567 /* ViewController.m in Sources */,
+				B0C7105318B65A5800245567 /* loginViewController.m in Sources */,
 				B0C7104A18B65A5800245567 /* AppDelegate.m in Sources */,
 				ACD9DFD318BB969C00DD2380 /* tabViewController.m in Sources */,
 				B0C7104618B65A5800245567 /* main.m in Sources */,
-				ACD9DE2C18BB7C6600DD2380 /* InfoScreenViewController.m in Sources */,
 				AC28D85818B8C2CF0054DA9F /* Sensors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

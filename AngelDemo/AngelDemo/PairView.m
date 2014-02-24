@@ -33,6 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
     self.m = [[CBCentralManager alloc]initWithDelegate:self queue:nil];
     self.nDevices = [[NSMutableArray alloc]init];
     self.sensorTags = [[NSMutableArray alloc]init];

@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Ugur Kirbac. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "loginViewController.h"
 #import "PairView.h"
-@interface ViewController ()
+@interface loginViewController ()
 
 @end
 
-@implementation ViewController
+@implementation loginViewController
 #pragma mark - UIViewController
 
 

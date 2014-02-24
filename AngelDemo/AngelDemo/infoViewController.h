@@ -1,5 +1,5 @@
 //
-//  tabViewController.h
+//  infoViewController.h
 //  AngelDemo
 //
 //  Created by Guest Account on 2/24/14.
@@ -10,17 +10,16 @@
 #import "BLEDevice.h"
 #import "BLEUtility.h"
 #import "Sensors.h"
-@interface tabViewController :  UITabBarController 
-{
-    /*
-    IBOutlet UITextField *tempValue;
-    IBOutlet UITextField *humidityValue;
-    IBOutlet UITextField *motionExist;
-     */
-}
-/*
- 
--(IBAction)angelClicked:(id)sender;
+@interface infoViewController :  UIViewController <CBCentralManagerDelegate,CBPeripheralDelegate>
+
+
+@property (weak, nonatomic) IBOutlet UILabel *tempValue;
+@property (weak, nonatomic) IBOutlet UILabel *humidityValue;
+@property (weak, nonatomic) IBOutlet UILabel *motionValue;
+
+
+
+
 @property (strong,nonatomic) sensorIMU3000 *gyroSensor;
 
 
@@ -42,6 +41,5 @@
 -(void) alphaFader:(NSTimer *)timer;
 -(void) logValues:(NSTimer *)timer;
 
-*/
 
 @end
