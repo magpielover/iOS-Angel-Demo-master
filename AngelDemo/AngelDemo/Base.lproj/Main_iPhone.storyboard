@@ -51,7 +51,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="td4-zH-8pU" kind="modal" id="XTx-BS-P7w"/>
+                                    <segue destination="td4-zH-8pU" kind="modal" id="RuK-gZ-YJD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="-742" y="-1860"/>
         </scene>
-        <!--Pair View-->
+        <!--Device Selector-->
         <scene sceneID="SHM-Yi-CVY">
             <objects>
-                <viewController storyboardIdentifier="PairViewID" id="td4-zH-8pU" customClass="PairView" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PairViewID" id="td4-zH-8pU" customClass="deviceSelector" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mxd-jD-P7i"/>
                         <viewControllerLayoutGuide type="bottom" id="5SW-iz-0s5"/>
@@ -112,7 +112,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="angelIcon" destination="EL6-wT-qfn" id="Jpd-EQ-ZSX"/>
+                        <outlet property="angelIcon" destination="EL6-wT-qfn" id="bKj-Uw-3BY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pIa-EC-sr7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -199,28 +199,10 @@
             </objects>
             <point key="canvasLocation" x="11" y="-344"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="JMf-Bf-OoJ">
-            <objects>
-                <viewController id="RNj-Dh-hFX" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="01R-uD-7ET"/>
-                        <viewControllerLayoutGuide type="bottom" id="3do-0p-v0o"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ttS-N1-mou">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0aG-xA-2as" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-851" y="-1136"/>
-        </scene>
-        <!--Tab Bar Controller-->
+        <!--Info Tab Bar Controller-->
         <scene sceneID="MZK-KP-8yV">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="plW-MC-sVe" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="infoTabBar" definesPresentationContext="YES" id="plW-MC-sVe" customClass="infoTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="6WT-ds-ErB">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -276,44 +258,46 @@
                                     <segue destination="Peh-0z-qQr" kind="modal" id="npX-xz-k1Y"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aky-Yy-Uqh">
-                                <rect key="frame" x="205" y="99" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aky-Yy-Uqh">
+                                <rect key="frame" x="204" y="99" width="71" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.58449315335407237" green="1" blue="0.50754743613076569" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzr-SN-BQm">
-                                <rect key="frame" x="205" y="144" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzr-SN-BQm">
+                                <rect key="frame" x="204" y="144" width="71" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.66844846644032418" green="1" blue="0.56193884494783675" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVG-0O-qvQ">
-                                <rect key="frame" x="205" y="191" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVG-0O-qvQ">
+                                <rect key="frame" x="205" y="188" width="70" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.58449315339999997" green="1" blue="0.50754743609999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" none="YES" staticText="YES"/>
+                        </accessibility>
                     </view>
                     <tabBarItem key="tabBarItem" title="Info" id="aNp-CA-qLt"/>
                     <connections>
-                        <outlet property="humidityValue" destination="sVG-0O-qvQ" id="Ypb-VI-C3C"/>
-                        <outlet property="motionValue" destination="sVG-0O-qvQ" id="65h-BB-GrM"/>
-                        <outlet property="tempValue" destination="Aky-Yy-Uqh" id="8YD-dZ-Yui"/>
+                        <outlet property="humidityValue" destination="gzr-SN-BQm" id="6RA-gu-JCv"/>
+                        <outlet property="motionValue" destination="sVG-0O-qvQ" id="8rB-6C-BVF"/>
+                        <outlet property="tempValue" destination="Aky-Yy-Uqh" id="InN-vM-rou"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Bw-Rz-rpo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="695" y="-372"/>
+            <point key="canvasLocation" x="613" y="-465"/>
         </scene>
     </scenes>
     <resources>
@@ -327,7 +311,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ndZ-Mt-66v"/>
+        <segue reference="RuK-gZ-YJD"/>
         <segue reference="n9L-hs-kM5"/>
         <segue reference="npX-xz-k1Y"/>
     </inferredMetricsTieBreakers>

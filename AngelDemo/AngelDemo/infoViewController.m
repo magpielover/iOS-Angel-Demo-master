@@ -28,8 +28,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(alphaFader:) userInfo:nil repeats:YES];
 	// Do any additional setup after loading the view.
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -39,165 +41,60 @@
 
 
 
--(void) configureSensorTag {
-    // Configure sensortag, turning on Sensors and setting update period for sensors etc ...
+- (void)setLabelValues:(NSString*)temp humidity:(NSString*)humidity motion:(NSString*)motion{
+   
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        self.tempValue.text = temp;
+        self.humidityValue.text = humidity;
+        self.motionValue.text = motion;
+    });
     
-    if (([self sensorEnabled:@"Ambient temperature active"]) || ([self sensorEnabled:@"IR temperature active"])) {
-        // Enable Temperature sensor
-        CBUUID *sUUID = [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"IR temperature service UUID"]];
-        CBUUID *cUUID = [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"IR temperature config UUID"]];
-        uint8_t data = 0x01;
-        [BLEUtility writeCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID data:[NSData dataWithBytes:&data length:1]];
-        cUUID = [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"IR temperature data UUID"]];
-        [BLEUtility setNotificationForCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID enable:YES];
-        
-        if ([self sensorEnabled:@"Ambient temperature active"]) [self.sensorsEnabled addObject:@"Ambient temperature"];
-        if ([self sensorEnabled:@"IR temperature active"]) [self.sensorsEnabled addObject:@"IR temperature"];
-        
-    }
-    if ([self sensorEnabled:@"Humidity active"]) {
-        CBUUID *sUUID = [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Humidity service UUID"]];
-        CBUUID *cUUID = [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Humidity config UUID"]];
-        uint8_t data = 0x01;
-        [BLEUtility writeCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID data:[NSData dataWithBytes:&data length:1]];
-        cUUID = [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Humidity data UUID"]];
-        [BLEUtility setNotificationForCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID enable:YES];
-        [self.sensorsEnabled addObject:@"Humidity"];
-    }
-    
-    if ([self sensorEnabled:@"Gyroscope active"]) {
-        CBUUID *sUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Gyroscope service UUID"]];
-        CBUUID *cUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Gyroscope config UUID"]];
-        uint8_t data = 0x07;
-        [BLEUtility writeCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID data:[NSData dataWithBytes:&data length:1]];
-        cUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Gyroscope data UUID"]];
-        [BLEUtility setNotificationForCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID enable:YES];
-        [self.sensorsEnabled addObject:@"Gyroscope"];
-    }
-    
-    
+  
 }
 
--(void) deconfigureSensorTag {
-    if (([self sensorEnabled:@"Ambient temperature active"]) || ([self sensorEnabled:@"IR temperature active"])) {
-        // Enable Temperature sensor
-        CBUUID *sUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"IR temperature service UUID"]];
-        CBUUID *cUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"IR temperature config UUID"]];
-        unsigned char data = 0x00;
-        [BLEUtility writeCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID data:[NSData dataWithBytes:&data length:1]];
-        cUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"IR temperature data UUID"]];
-        [BLEUtility setNotificationForCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID enable:NO];
-    }
-    
-    if ([self sensorEnabled:@"Humidity active"]) {
-        CBUUID *sUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Humidity service UUID"]];
-        CBUUID *cUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Humidity config UUID"]];
-        uint8_t data = 0x00;
-        [BLEUtility writeCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID data:[NSData dataWithBytes:&data length:1]];
-        cUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Humidity data UUID"]];
-        [BLEUtility setNotificationForCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID enable:NO];
+
+-(void)setTemp:(NSString*)temp{
+     self.tempValue.text = temp;
+}
+
+-(void)setHumidity:(NSString*)humidity{
+     self.humidityValue.text = humidity;
+}
+-(void)setMotion:(NSString*)motion{
+      self.motionValue.text = motion;
+}
+
+
+- (void)test{
+    NSLog(@"TEST GIRDI");
+}
+
+
+-(void) alphaFader:(NSTimer *)timer {
+    CGFloat w,a;
+    if (self.tempValue) {
+        [self.tempValue.textColor getWhite:&w alpha:&a];
+        if (a > MIN_ALPHA_FADE) a -= ALPHA_FADE_STEP;
+        self.tempValue.textColor = [self.tempValue.textColor colorWithAlphaComponent:a];
     }
 
-    if ([self sensorEnabled:@"Gyroscope active"]) {
-        CBUUID *sUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Gyroscope service UUID"]];
-        CBUUID *cUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Gyroscope config UUID"]];
-        uint8_t data = 0x00;
-        [BLEUtility writeCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID data:[NSData dataWithBytes:&data length:1]];
-        cUUID =  [CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Gyroscope data UUID"]];
-        [BLEUtility setNotificationForCharacteristic:self.d.p sCBUUID:sUUID cCBUUID:cUUID enable:NO];
+
+    if (self.humidityValue) {
+        [self.humidityValue.textColor getWhite:&w alpha:&a];
+        if (a > MIN_ALPHA_FADE) a -= ALPHA_FADE_STEP;
+        self.humidityValue.textColor = [self.humidityValue.textColor colorWithAlphaComponent:a];
+    }
+    
+    if (self.motionValue) {
+        [self.motionValue.textColor getWhite:&w alpha:&a];
+        if (a > MIN_ALPHA_FADE) a -= ALPHA_FADE_STEP;
+        self.motionValue.textColor = [self.motionValue.textColor colorWithAlphaComponent:a];
     }
 
 }
 
--(bool)sensorEnabled:(NSString *)Sensor {
-    NSString *val = [self.d.setupData valueForKey:Sensor];
-    if (val) {
-        if ([val isEqualToString:@"1"]) return TRUE;
-    }
-    return FALSE;
-}
-
--(int)sensorPeriod:(NSString *)Sensor {
-    NSString *val = [self.d.setupData valueForKey:Sensor];
-    return [val integerValue];
-}
-
-#pragma mark - CBCentralManager delegate function
-
--(void) centralManagerDidUpdateState:(CBCentralManager *)central {
-    
-}
-
--(void) centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
-    peripheral.delegate = self;
-    [peripheral discoverServices:nil];
-}
-
-
-#pragma mark - CBperipheral delegate functions
-
--(void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error {
-    NSLog(@"..");
-    if ([service.UUID isEqual:[CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Gyroscope service UUID"]]]) {
-        [self configureSensorTag];
-    }
-}
-
--(void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
-    NSLog(@".");
-    for (CBService *s in peripheral.services) [peripheral discoverCharacteristics:nil forService:s];
-}
-
--(void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
-    NSLog(@"didUpdateNotificationStateForCharacteristic %@, error = %@",characteristic.UUID, error);
-}
-
-
-
--(void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
-    //NSLog(@"didUpdateValueForCharacteristic = %@",characteristic.UUID);
-    
-    
-    if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:[self.d.setupData valueForKey:@"IR temperature data UUID"]]]) {
-        float tAmb = [sensorTMP006 calcTAmb:characteristic.value];
-        float tObj = [sensorTMP006 calcTObj:characteristic.value];
-        
-        self.tempValue.text =@"TEMp";
-        
-        self.currentVal.tAmb = tAmb;
-        self.currentVal.tIR = tObj;
-        
-    }
-    
-    if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Humidity data UUID"]]]) {
-        
-        float rHVal = [sensorSHT21 calcPress:characteristic.value];
-        self.currentVal.humidity = rHVal;
-        
-    }
-    
-    if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:[self.d.setupData valueForKey:@"Gyroscope data UUID"]]]) {
-        
-        float x = [self.gyroSensor calcXValue:characteristic.value];
-        float y = [self.gyroSensor calcYValue:characteristic.value];
-        float z = [self.gyroSensor calcZValue:characteristic.value];
-        
-        self.currentVal.gyroX = x;
-        self.currentVal.gyroY = y;
-        self.currentVal.gyroZ = z;
-        
-    }
-    
-}
-
--(void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
-    NSLog(@"didWriteValueForCharacteristic %@ error = %@",characteristic.UUID,error);
-}
-
-- (IBAction) handleCalibrateGyro {
-    NSLog(@"Calibrate gyroscope pressed ! ");
-    [self.gyroSensor calibrate];
-}
 
 
 

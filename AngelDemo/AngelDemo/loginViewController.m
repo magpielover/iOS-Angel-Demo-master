@@ -7,7 +7,7 @@
 //
 
 #import "loginViewController.h"
-#import "PairView.h"
+
 @interface loginViewController ()
 
 @end
@@ -46,8 +46,6 @@
 
 - (void)switchView{
  
-     PairView *pairview = [[PairView alloc]  init];
-    //[self presentViewController:pairview animated:YES completion:NULL];
     
     [self performSegueWithIdentifier:@"NextView" sender:self];
 }

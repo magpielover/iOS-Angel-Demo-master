@@ -7,7 +7,7 @@
  */
 
 #import "deviceSelector.h"
-
+#import "infoTabBarController.h"
 @interface deviceSelector ()
 
 @end
@@ -17,28 +17,15 @@
 
 
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-        self.m = [[CBCentralManager alloc]initWithDelegate:self queue:nil];
-        self.nDevices = [[NSMutableArray alloc]init];
-        self.sensorTags = [[NSMutableArray alloc]init];
-        //self.title = @"SensorTag Example";
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.m = [[CBCentralManager alloc]initWithDelegate:self queue:nil];
+    self.nDevices = [[NSMutableArray alloc]init];
+    self.sensorTags = [[NSMutableArray alloc]init];
+    NSLog(@"DEvice selector View DID load");
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,63 +40,27 @@
 }
 
 
-
-
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return sensorTags.count;
-}
-// this returns the Found tag object to the cell of the table, depends on how many tags found
-/*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:[NSString stringWithFormat:@"%d_Cell",indexPath.row]];
-    CBPeripheral *p = [self.sensorTags objectAtIndex:indexPath.row];
+- (IBAction)angelIconClicked{
+    CBPeripheral *p = [self.sensorTags objectAtIndex: 0];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",p.name];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",CFUUIDCreateString(nil, p.UUID)];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    BLEDevice *d = [[BLEDevice alloc]init];
     
-    return cell;
-}
- 
- */
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:[NSString stringWithFormat:@"%d_Cell",indexPath.row]];
-     //CBPeripheral *p = [self.sensorTags objectAtIndex:indexPath.row];
+    d.p = p;
+    d.manager = self.m;
+    d.setupData = [self makeSensorTagConfiguration];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"ugur baba yapar"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"adamin a.q"];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle: nil];
     
-    return cell;
+    infoTabBarController *infoTab = (infoTabBarController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"infoTabBar"];
+    
+    
+    [infoTab initBLE:d];
+    
+     [self presentViewController:infoTab animated:YES completion:nil];
+    
+    //[self performSegueWithIdentifier:@"InfoView2" sender:self];
 }
 
-
--(NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
-        if (self.sensorTags.count > 1 )return [NSString stringWithFormat:@"%d Angel Found",self.sensorTags.count];
-        else return [NSString stringWithFormat:@"%d Angel Found",self.sensorTags.count];
-    }
-    
-    return @"";
-}
-
--(float) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 150.0f;
-}
-
-#pragma mark - Table view delegate
 
 
 
@@ -142,7 +93,7 @@
     
     peripheral.delegate = self;
     [central connectPeripheral:peripheral options:nil];
-    
+    [self.angelIcon setHidden:NO];
     [self.nDevices addObject:peripheral];
     
 }
@@ -176,7 +127,7 @@
             }
         if (!replace) {
             [self.sensorTags addObject:peripheral];
-            [self.tableView reloadData];
+           
         }
     }
 }

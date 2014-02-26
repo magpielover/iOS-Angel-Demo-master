@@ -20,11 +20,18 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.dSVC = [[deviceSelectorViewController alloc]initWithStyle:UITableViewStyleGrouped];
+    
+   UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone"
+                                                                         bundle: nil];
+    
+    self.dSVC = (deviceSelectorViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"ugur"];
+    
+    //self.dSVC = [[deviceSelectorViewController alloc]initWithStyle:UITableViewStyleGrouped];
     self.manager = [[CBCentralManager alloc]initWithDelegate:self queue:nil];
     self.dSVC.manager = self.manager;
     self.dSVC.delegate = self;
     [self.button2 setEnabled:NO];
+
     
 }
 
@@ -39,6 +46,7 @@
 - (IBAction)button1Selected:(id)sender {
     NSLog(@"Opening device selector");
     [self presentViewController:self.dSVC animated:YES completion:nil];
+    //[self performSegueWithIdentifier:@"next" sender:self];
 }
 
 - (IBAction)button2Selected:(id)sender {

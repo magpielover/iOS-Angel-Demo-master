@@ -8,16 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "BLEDevice.h"
 
 
-@interface deviceSelector : UITableViewController <CBCentralManagerDelegate,CBPeripheralDelegate>
+@interface deviceSelector : UIViewController <CBCentralManagerDelegate,CBPeripheralDelegate>
 
 @property (strong,nonatomic) CBCentralManager *m;
 @property (strong,nonatomic) NSMutableArray *nDevices;
 @property (strong,nonatomic) NSMutableArray *sensorTags;
+@property (weak, nonatomic) IBOutlet UIButton *angelIcon;
 
 
 -(NSMutableDictionary *) makeSensorTagConfiguration;
-
+// Device to be selected
+- (IBAction)angelIconClicked;
 @end
 

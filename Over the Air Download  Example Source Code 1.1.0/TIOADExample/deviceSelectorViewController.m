@@ -21,12 +21,16 @@
         // Custom initialization
         self.devices = [[NSMutableArray alloc]init];
     }
+        NSLog(@"GITDI");
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+     self.devices = [[NSMutableArray alloc]init];
+    
+    NSLog(@"viewdid load girdi");
 }
 
 -(void)viewDidAppear:(BOOL)animated {
