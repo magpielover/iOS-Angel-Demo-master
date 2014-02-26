@@ -76,11 +76,14 @@
 }
 
 
+
 // Sensor Tag code sample
 
 
 -(void) configureSensorTag {
     // Configure sensortag, turning on Sensors and setting update period for sensors etc ...
+    
+    
     
     if (([self sensorEnabled:@"Ambient temperature active"]) || ([self sensorEnabled:@"IR temperature active"])) {
         // Enable Temperature sensor
@@ -94,6 +97,21 @@
         if ([self sensorEnabled:@"Ambient temperature active"]) [self.sensorsEnabled addObject:@"Ambient temperature"];
         if ([self sensorEnabled:@"IR temperature active"]) [self.sensorsEnabled addObject:@"IR temperature"];
         
+    }
+    
+    if ([self sensorEnabled:@"Accelerometer active"]) {
+        CBUUID *sUUID = [CBUUID UUIDWithString:[self.m_bleDevice.setupData valueForKey:@"Accelerometer service UUID"]];
+        CBUUID *cUUID = [CBUUID UUIDWithString:[self.m_bleDevice.setupData valueForKey:@"Accelerometer config UUID"]];
+        CBUUID *pUUID = [CBUUID UUIDWithString:[self.m_bleDevice.setupData valueForKey:@"Accelerometer period UUID"]];
+        NSInteger period = [[self.m_bleDevice.setupData valueForKey:@"Accelerometer period"] integerValue];
+        uint8_t periodData = (uint8_t)(period / 10);
+        NSLog(@"%d",periodData);
+        [BLEUtility writeCharacteristic:self.m_bleDevice.p sCBUUID:sUUID cCBUUID:pUUID data:[NSData dataWithBytes:&periodData length:1]];
+        uint8_t data = 0x01;
+        [BLEUtility writeCharacteristic:self.m_bleDevice.p sCBUUID:sUUID cCBUUID:cUUID data:[NSData dataWithBytes:&data length:1]];
+        cUUID = [CBUUID UUIDWithString:[self.m_bleDevice.setupData valueForKey:@"Accelerometer data UUID"]];
+        [BLEUtility setNotificationForCharacteristic:self.m_bleDevice.p sCBUUID:sUUID cCBUUID:cUUID enable:YES];
+        [self.sensorsEnabled addObject:@"Accelerometer"];
     }
     
     
@@ -131,6 +149,15 @@
         cUUID =  [CBUUID UUIDWithString:[self.m_bleDevice.setupData valueForKey:@"IR temperature data UUID"]];
         [BLEUtility setNotificationForCharacteristic:self.m_bleDevice.p sCBUUID:sUUID cCBUUID:cUUID enable:NO];
     }
+    if ([self sensorEnabled:@"Accelerometer active"]) {
+        CBUUID *sUUID =  [CBUUID UUIDWithString:[self.m_bleDevice.setupData valueForKey:@"Accelerometer service UUID"]];
+        CBUUID *cUUID =  [CBUUID UUIDWithString:[self.m_bleDevice.setupData valueForKey:@"Accelerometer config UUID"]];
+        uint8_t data = 0x00;
+        [BLEUtility writeCharacteristic:self.m_bleDevice.p sCBUUID:sUUID cCBUUID:cUUID data:[NSData dataWithBytes:&data length:1]];
+        cUUID =  [CBUUID UUIDWithString:[self.m_bleDevice.setupData valueForKey:@"Accelerometer data UUID"]];
+        [BLEUtility setNotificationForCharacteristic:self.m_bleDevice.p sCBUUID:sUUID cCBUUID:cUUID enable:NO];
+    }
+    
        if ([self sensorEnabled:@"Humidity active"]) {
         CBUUID *sUUID =  [CBUUID UUIDWithString:[self.m_bleDevice.setupData valueForKey:@"Humidity service UUID"]];
         CBUUID *cUUID =  [CBUUID UUIDWithString:[self.m_bleDevice.setupData valueForKey:@"Humidity config UUID"]];
@@ -176,7 +203,11 @@
     peripheral.delegate = self;
     [peripheral discoverServices:nil];
 }
-
+- (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error{
+    
+    
+    [self.infoView deviceDisconnected];
+}
 
 #pragma mark - CBperipheral delegate functions
 
@@ -186,6 +217,8 @@
         [self configureSensorTag];
     }
 }
+
+
 
 -(void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
     NSLog(@".");
@@ -261,12 +294,29 @@
         self.currentVal.gyroX = x;
         self.currentVal.gyroY = y;
         self.currentVal.gyroZ = z;
+  
+    }
+    
+    if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:[self.m_bleDevice.setupData valueForKey:@"Accelerometer data UUID"]]]) {
+        float x = [sensorKXTJ9 calcXValue:characteristic.value];
+        float y = [sensorKXTJ9 calcYValue:characteristic.value];
+        float z = [sensorKXTJ9 calcZValue:characteristic.value];
         
-        sensMotion = @"YES";
-        NSLog(sensMotion);
-        [self.infoView setMotion:sensMotion];
+        float mot = (pow(x,2)-pow(self.currentVal.gyroX,2))+(pow(y,2)-pow(self.currentVal.gyroY,2))+(pow(z,2)-pow(self.currentVal.gyroZ,2));
+        if( mot < 0.1)
+            NSLog(@"NO MOTION");
+        else [self.infoView sendWarningonMotion];
+        
+        self.currentVal.accX = x;
+        self.currentVal.accY = y;
+        self.currentVal.accZ = z;
         
     }
+      CBPeripheral* myPeripheral = [self.m_bleDevice p];
+      [myPeripheral readRSSI];
+      NSNumber *number =myPeripheral.RSSI;
+      [self.infoView setRSSIValue:number];
+
 }
     
         

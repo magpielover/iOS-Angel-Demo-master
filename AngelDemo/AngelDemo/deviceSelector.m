@@ -93,7 +93,7 @@
     
     peripheral.delegate = self;
     [central connectPeripheral:peripheral options:nil];
-    [self.angelIcon setHidden:NO];
+    
     [self.nDevices addObject:peripheral];
     
 }
@@ -130,6 +130,9 @@
            
         }
     }
+    // angel appears
+    [self.angelIcon setHidden:NO];
+
 }
 
 -(void) peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
@@ -188,7 +191,6 @@
     [d setValue:@"F000AA52-0451-4000-B000-000000000000" forKey:@"Gyroscope config UUID"];
 
     NSLog(@"%@",d);
-    
     return d;
 }
 

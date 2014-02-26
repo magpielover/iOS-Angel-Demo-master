@@ -20,5 +20,7 @@
 /// Pointer to dictionary with device setup data
 @property NSMutableDictionary *setupData;
 
+
+
 @end
 
