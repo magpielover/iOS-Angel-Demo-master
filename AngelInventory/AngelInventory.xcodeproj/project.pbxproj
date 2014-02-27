@@ -1,0 +1,637 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		780A2F1D18BF800B00C85F05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780A2F1C18BF800B00C85F05 /* Foundation.framework */; };
+		780A2F1F18BF800B00C85F05 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780A2F1E18BF800B00C85F05 /* CoreGraphics.framework */; };
+		780A2F2118BF800B00C85F05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780A2F2018BF800B00C85F05 /* UIKit.framework */; };
+		780A2F2718BF800B00C85F05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 780A2F2518BF800B00C85F05 /* InfoPlist.strings */; };
+		780A2F2918BF800B00C85F05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 780A2F2818BF800B00C85F05 /* main.m */; };
+		780A2F2D18BF800B00C85F05 /* InventoryAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 780A2F2C18BF800B00C85F05 /* InventoryAppDelegate.m */; };
+		780A2F3018BF800B00C85F05 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780A2F2E18BF800B00C85F05 /* Main_iPhone.storyboard */; };
+		780A2F3318BF800B00C85F05 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780A2F3118BF800B00C85F05 /* Main_iPad.storyboard */; };
+		780A2F3618BF800B00C85F05 /* InventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780A2F3518BF800B00C85F05 /* InventoryViewController.m */; };
+		780A2F3818BF800B00C85F05 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 780A2F3718BF800B00C85F05 /* Images.xcassets */; };
+		780A2F3F18BF800B00C85F05 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780A2F3E18BF800B00C85F05 /* XCTest.framework */; };
+		780A2F4018BF800B00C85F05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780A2F1C18BF800B00C85F05 /* Foundation.framework */; };
+		780A2F4118BF800B00C85F05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780A2F2018BF800B00C85F05 /* UIKit.framework */; };
+		780A2F4918BF800B00C85F05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 780A2F4718BF800B00C85F05 /* InfoPlist.strings */; };
+		780A2F4B18BF800B00C85F05 /* AngelInventoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 780A2F4A18BF800B00C85F05 /* AngelInventoryTests.m */; };
+		780A2F5518BF812500C85F05 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780A2F5418BF812500C85F05 /* AudioToolbox.framework */; };
+		780A2F5718BF813000C85F05 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780A2F5618BF813000C85F05 /* CoreMedia.framework */; };
+		780A2F5918BF813A00C85F05 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780A2F5818BF813A00C85F05 /* QuartzCore.framework */; };
+		780A2F5B18BF814400C85F05 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780A2F5A18BF814400C85F05 /* SystemConfiguration.framework */; };
+		780A2F5D18BF814F00C85F05 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 780A2F5C18BF814F00C85F05 /* libiconv.dylib */; };
+		780A2F5F18BF815600C85F05 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780A2F5E18BF815600C85F05 /* AVFoundation.framework */; };
+		780A2F6118BF815D00C85F05 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780A2F6018BF815D00C85F05 /* CoreVideo.framework */; };
+		780A2F8018BF819500C85F05 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 780A2F7A18BF819500C85F05 /* libzbar.a */; };
+		780A2F8118BF819500C85F05 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 780A2F7C18BF819500C85F05 /* zbar-back.png */; };
+		780A2F8218BF819500C85F05 /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = 780A2F7D18BF819500C85F05 /* zbar-help.html */; };
+		780A2F8318BF819500C85F05 /* zbar-helpicons.png in Resources */ = {isa = PBXBuildFile; fileRef = 780A2F7E18BF819500C85F05 /* zbar-helpicons.png */; };
+		780A2F8418BF819500C85F05 /* zbar-samples.png in Resources */ = {isa = PBXBuildFile; fileRef = 780A2F7F18BF819500C85F05 /* zbar-samples.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		780A2F4218BF800B00C85F05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 780A2F1118BF800B00C85F05 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 780A2F1818BF800B00C85F05;
+			remoteInfo = AngelInventory;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		780A2F1918BF800B00C85F05 /* AngelInventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AngelInventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		780A2F1C18BF800B00C85F05 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		780A2F1E18BF800B00C85F05 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		780A2F2018BF800B00C85F05 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		780A2F2418BF800B00C85F05 /* AngelInventory-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AngelInventory-Info.plist"; sourceTree = "<group>"; };
+		780A2F2618BF800B00C85F05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		780A2F2818BF800B00C85F05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		780A2F2A18BF800B00C85F05 /* AngelInventory-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AngelInventory-Prefix.pch"; sourceTree = "<group>"; };
+		780A2F2B18BF800B00C85F05 /* InventoryAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InventoryAppDelegate.h; sourceTree = "<group>"; };
+		780A2F2C18BF800B00C85F05 /* InventoryAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InventoryAppDelegate.m; sourceTree = "<group>"; };
+		780A2F2F18BF800B00C85F05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		780A2F3218BF800B00C85F05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		780A2F3418BF800B00C85F05 /* InventoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InventoryViewController.h; sourceTree = "<group>"; };
+		780A2F3518BF800B00C85F05 /* InventoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InventoryViewController.m; sourceTree = "<group>"; };
+		780A2F3718BF800B00C85F05 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		780A2F3D18BF800B00C85F05 /* AngelInventoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AngelInventoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		780A2F3E18BF800B00C85F05 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		780A2F4618BF800B00C85F05 /* AngelInventoryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AngelInventoryTests-Info.plist"; sourceTree = "<group>"; };
+		780A2F4818BF800B00C85F05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		780A2F4A18BF800B00C85F05 /* AngelInventoryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AngelInventoryTests.m; sourceTree = "<group>"; };
+		780A2F5418BF812500C85F05 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		780A2F5618BF813000C85F05 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		780A2F5818BF813A00C85F05 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		780A2F5A18BF814400C85F05 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		780A2F5C18BF814F00C85F05 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		780A2F5E18BF815600C85F05 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		780A2F6018BF815D00C85F05 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		780A2F6618BF819500C85F05 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
+		780A2F6718BF819500C85F05 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
+		780A2F6818BF819500C85F05 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		780A2F6918BF819500C85F05 /* ImageScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScanner.h; sourceTree = "<group>"; };
+		780A2F6A18BF819500C85F05 /* Processor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processor.h; sourceTree = "<group>"; };
+		780A2F6B18BF819500C85F05 /* Scanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scanner.h; sourceTree = "<group>"; };
+		780A2F6C18BF819500C85F05 /* Symbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Symbol.h; sourceTree = "<group>"; };
+		780A2F6D18BF819500C85F05 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
+		780A2F6E18BF819500C85F05 /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
+		780A2F6F18BF819500C85F05 /* zbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zbar.h; sourceTree = "<group>"; };
+		780A2F7018BF819500C85F05 /* ZBarCameraSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarCameraSimulator.h; sourceTree = "<group>"; };
+		780A2F7118BF819500C85F05 /* ZBarCaptureReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarCaptureReader.h; sourceTree = "<group>"; };
+		780A2F7218BF819500C85F05 /* ZBarHelpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarHelpController.h; sourceTree = "<group>"; };
+		780A2F7318BF819500C85F05 /* ZBarImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarImage.h; sourceTree = "<group>"; };
+		780A2F7418BF819500C85F05 /* ZBarImageScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarImageScanner.h; sourceTree = "<group>"; };
+		780A2F7518BF819500C85F05 /* ZBarReaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderController.h; sourceTree = "<group>"; };
+		780A2F7618BF819500C85F05 /* ZBarReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderView.h; sourceTree = "<group>"; };
+		780A2F7718BF819500C85F05 /* ZBarReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderViewController.h; sourceTree = "<group>"; };
+		780A2F7818BF819500C85F05 /* ZBarSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarSDK.h; sourceTree = "<group>"; };
+		780A2F7918BF819500C85F05 /* ZBarSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarSymbol.h; sourceTree = "<group>"; };
+		780A2F7A18BF819500C85F05 /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
+		780A2F7C18BF819500C85F05 /* zbar-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-back.png"; sourceTree = "<group>"; };
+		780A2F7D18BF819500C85F05 /* zbar-help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "zbar-help.html"; sourceTree = "<group>"; };
+		780A2F7E18BF819500C85F05 /* zbar-helpicons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-helpicons.png"; sourceTree = "<group>"; };
+		780A2F7F18BF819500C85F05 /* zbar-samples.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-samples.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		780A2F1618BF800B00C85F05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				780A2F6118BF815D00C85F05 /* CoreVideo.framework in Frameworks */,
+				780A2F5F18BF815600C85F05 /* AVFoundation.framework in Frameworks */,
+				780A2F5D18BF814F00C85F05 /* libiconv.dylib in Frameworks */,
+				780A2F5B18BF814400C85F05 /* SystemConfiguration.framework in Frameworks */,
+				780A2F5918BF813A00C85F05 /* QuartzCore.framework in Frameworks */,
+				780A2F5718BF813000C85F05 /* CoreMedia.framework in Frameworks */,
+				780A2F5518BF812500C85F05 /* AudioToolbox.framework in Frameworks */,
+				780A2F1F18BF800B00C85F05 /* CoreGraphics.framework in Frameworks */,
+				780A2F2118BF800B00C85F05 /* UIKit.framework in Frameworks */,
+				780A2F8018BF819500C85F05 /* libzbar.a in Frameworks */,
+				780A2F1D18BF800B00C85F05 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		780A2F3A18BF800B00C85F05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				780A2F3F18BF800B00C85F05 /* XCTest.framework in Frameworks */,
+				780A2F4118BF800B00C85F05 /* UIKit.framework in Frameworks */,
+				780A2F4018BF800B00C85F05 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		780A2F1018BF800B00C85F05 = {
+			isa = PBXGroup;
+			children = (
+				780A2F6218BF819500C85F05 /* ZBarSDK */,
+				780A2F2218BF800B00C85F05 /* AngelInventory */,
+				780A2F4418BF800B00C85F05 /* AngelInventoryTests */,
+				780A2F1B18BF800B00C85F05 /* Frameworks */,
+				780A2F1A18BF800B00C85F05 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		780A2F1A18BF800B00C85F05 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				780A2F1918BF800B00C85F05 /* AngelInventory.app */,
+				780A2F3D18BF800B00C85F05 /* AngelInventoryTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		780A2F1B18BF800B00C85F05 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				780A2F6018BF815D00C85F05 /* CoreVideo.framework */,
+				780A2F5E18BF815600C85F05 /* AVFoundation.framework */,
+				780A2F5C18BF814F00C85F05 /* libiconv.dylib */,
+				780A2F5A18BF814400C85F05 /* SystemConfiguration.framework */,
+				780A2F5818BF813A00C85F05 /* QuartzCore.framework */,
+				780A2F5618BF813000C85F05 /* CoreMedia.framework */,
+				780A2F5418BF812500C85F05 /* AudioToolbox.framework */,
+				780A2F1C18BF800B00C85F05 /* Foundation.framework */,
+				780A2F1E18BF800B00C85F05 /* CoreGraphics.framework */,
+				780A2F2018BF800B00C85F05 /* UIKit.framework */,
+				780A2F3E18BF800B00C85F05 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		780A2F2218BF800B00C85F05 /* AngelInventory */ = {
+			isa = PBXGroup;
+			children = (
+				780A2F2B18BF800B00C85F05 /* InventoryAppDelegate.h */,
+				780A2F2C18BF800B00C85F05 /* InventoryAppDelegate.m */,
+				780A2F2E18BF800B00C85F05 /* Main_iPhone.storyboard */,
+				780A2F3118BF800B00C85F05 /* Main_iPad.storyboard */,
+				780A2F3418BF800B00C85F05 /* InventoryViewController.h */,
+				780A2F3518BF800B00C85F05 /* InventoryViewController.m */,
+				780A2F3718BF800B00C85F05 /* Images.xcassets */,
+				780A2F2318BF800B00C85F05 /* Supporting Files */,
+			);
+			path = AngelInventory;
+			sourceTree = "<group>";
+		};
+		780A2F2318BF800B00C85F05 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				780A2F2418BF800B00C85F05 /* AngelInventory-Info.plist */,
+				780A2F2518BF800B00C85F05 /* InfoPlist.strings */,
+				780A2F2818BF800B00C85F05 /* main.m */,
+				780A2F2A18BF800B00C85F05 /* AngelInventory-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		780A2F4418BF800B00C85F05 /* AngelInventoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				780A2F4A18BF800B00C85F05 /* AngelInventoryTests.m */,
+				780A2F4518BF800B00C85F05 /* Supporting Files */,
+			);
+			path = AngelInventoryTests;
+			sourceTree = "<group>";
+		};
+		780A2F4518BF800B00C85F05 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				780A2F4618BF800B00C85F05 /* AngelInventoryTests-Info.plist */,
+				780A2F4718BF800B00C85F05 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		780A2F6218BF819500C85F05 /* ZBarSDK */ = {
+			isa = PBXGroup;
+			children = (
+				780A2F6318BF819500C85F05 /* Headers */,
+				780A2F7A18BF819500C85F05 /* libzbar.a */,
+				780A2F7B18BF819500C85F05 /* Resources */,
+			);
+			name = ZBarSDK;
+			path = AngelInventory/ZBarSDK;
+			sourceTree = "<group>";
+		};
+		780A2F6318BF819500C85F05 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				780A2F6418BF819500C85F05 /* ZBarSDK */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		780A2F6418BF819500C85F05 /* ZBarSDK */ = {
+			isa = PBXGroup;
+			children = (
+				780A2F6518BF819500C85F05 /* zbar */,
+				780A2F6F18BF819500C85F05 /* zbar.h */,
+				780A2F7018BF819500C85F05 /* ZBarCameraSimulator.h */,
+				780A2F7118BF819500C85F05 /* ZBarCaptureReader.h */,
+				780A2F7218BF819500C85F05 /* ZBarHelpController.h */,
+				780A2F7318BF819500C85F05 /* ZBarImage.h */,
+				780A2F7418BF819500C85F05 /* ZBarImageScanner.h */,
+				780A2F7518BF819500C85F05 /* ZBarReaderController.h */,
+				780A2F7618BF819500C85F05 /* ZBarReaderView.h */,
+				780A2F7718BF819500C85F05 /* ZBarReaderViewController.h */,
+				780A2F7818BF819500C85F05 /* ZBarSDK.h */,
+				780A2F7918BF819500C85F05 /* ZBarSymbol.h */,
+			);
+			path = ZBarSDK;
+			sourceTree = "<group>";
+		};
+		780A2F6518BF819500C85F05 /* zbar */ = {
+			isa = PBXGroup;
+			children = (
+				780A2F6618BF819500C85F05 /* Decoder.h */,
+				780A2F6718BF819500C85F05 /* Exception.h */,
+				780A2F6818BF819500C85F05 /* Image.h */,
+				780A2F6918BF819500C85F05 /* ImageScanner.h */,
+				780A2F6A18BF819500C85F05 /* Processor.h */,
+				780A2F6B18BF819500C85F05 /* Scanner.h */,
+				780A2F6C18BF819500C85F05 /* Symbol.h */,
+				780A2F6D18BF819500C85F05 /* Video.h */,
+				780A2F6E18BF819500C85F05 /* Window.h */,
+			);
+			path = zbar;
+			sourceTree = "<group>";
+		};
+		780A2F7B18BF819500C85F05 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				780A2F7C18BF819500C85F05 /* zbar-back.png */,
+				780A2F7D18BF819500C85F05 /* zbar-help.html */,
+				780A2F7E18BF819500C85F05 /* zbar-helpicons.png */,
+				780A2F7F18BF819500C85F05 /* zbar-samples.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		780A2F1818BF800B00C85F05 /* AngelInventory */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 780A2F4E18BF800B00C85F05 /* Build configuration list for PBXNativeTarget "AngelInventory" */;
+			buildPhases = (
+				780A2F1518BF800B00C85F05 /* Sources */,
+				780A2F1618BF800B00C85F05 /* Frameworks */,
+				780A2F1718BF800B00C85F05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AngelInventory;
+			productName = AngelInventory;
+			productReference = 780A2F1918BF800B00C85F05 /* AngelInventory.app */;
+			productType = "com.apple.product-type.application";
+		};
+		780A2F3C18BF800B00C85F05 /* AngelInventoryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 780A2F5118BF800B00C85F05 /* Build configuration list for PBXNativeTarget "AngelInventoryTests" */;
+			buildPhases = (
+				780A2F3918BF800B00C85F05 /* Sources */,
+				780A2F3A18BF800B00C85F05 /* Frameworks */,
+				780A2F3B18BF800B00C85F05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				780A2F4318BF800B00C85F05 /* PBXTargetDependency */,
+			);
+			name = AngelInventoryTests;
+			productName = AngelInventoryTests;
+			productReference = 780A2F3D18BF800B00C85F05 /* AngelInventoryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		780A2F1118BF800B00C85F05 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Inventory;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Ugur Kirbac";
+				TargetAttributes = {
+					780A2F3C18BF800B00C85F05 = {
+						TestTargetID = 780A2F1818BF800B00C85F05;
+					};
+				};
+			};
+			buildConfigurationList = 780A2F1418BF800B00C85F05 /* Build configuration list for PBXProject "AngelInventory" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 780A2F1018BF800B00C85F05;
+			productRefGroup = 780A2F1A18BF800B00C85F05 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				780A2F1818BF800B00C85F05 /* AngelInventory */,
+				780A2F3C18BF800B00C85F05 /* AngelInventoryTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		780A2F1718BF800B00C85F05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				780A2F3318BF800B00C85F05 /* Main_iPad.storyboard in Resources */,
+				780A2F3818BF800B00C85F05 /* Images.xcassets in Resources */,
+				780A2F3018BF800B00C85F05 /* Main_iPhone.storyboard in Resources */,
+				780A2F2718BF800B00C85F05 /* InfoPlist.strings in Resources */,
+				780A2F8418BF819500C85F05 /* zbar-samples.png in Resources */,
+				780A2F8218BF819500C85F05 /* zbar-help.html in Resources */,
+				780A2F8118BF819500C85F05 /* zbar-back.png in Resources */,
+				780A2F8318BF819500C85F05 /* zbar-helpicons.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		780A2F3B18BF800B00C85F05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				780A2F4918BF800B00C85F05 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		780A2F1518BF800B00C85F05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				780A2F2918BF800B00C85F05 /* main.m in Sources */,
+				780A2F2D18BF800B00C85F05 /* InventoryAppDelegate.m in Sources */,
+				780A2F3618BF800B00C85F05 /* InventoryViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		780A2F3918BF800B00C85F05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				780A2F4B18BF800B00C85F05 /* AngelInventoryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		780A2F4318BF800B00C85F05 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 780A2F1818BF800B00C85F05 /* AngelInventory */;
+			targetProxy = 780A2F4218BF800B00C85F05 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		780A2F2518BF800B00C85F05 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				780A2F2618BF800B00C85F05 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		780A2F2E18BF800B00C85F05 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				780A2F2F18BF800B00C85F05 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		780A2F3118BF800B00C85F05 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				780A2F3218BF800B00C85F05 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		780A2F4718BF800B00C85F05 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				780A2F4818BF800B00C85F05 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		780A2F4C18BF800B00C85F05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		780A2F4D18BF800B00C85F05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		780A2F4F18BF800B00C85F05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AngelInventory/AngelInventory-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				INFOPLIST_FILE = "AngelInventory/AngelInventory-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/magpielover/Desktop/iOS-Angel-Demo-master/AngelInventory/AngelInventory/ZBarSDK",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				VALID_ARCHS = "arm64 armv7";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		780A2F5018BF800B00C85F05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AngelInventory/AngelInventory-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				INFOPLIST_FILE = "AngelInventory/AngelInventory-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/magpielover/Desktop/iOS-Angel-Demo-master/AngelInventory/AngelInventory/ZBarSDK",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				VALID_ARCHS = "arm64 armv7";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		780A2F5218BF800B00C85F05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AngelInventory.app/AngelInventory";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AngelInventory/AngelInventory-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "AngelInventoryTests/AngelInventoryTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		780A2F5318BF800B00C85F05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AngelInventory.app/AngelInventory";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AngelInventory/AngelInventory-Prefix.pch";
+				INFOPLIST_FILE = "AngelInventoryTests/AngelInventoryTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		780A2F1418BF800B00C85F05 /* Build configuration list for PBXProject "AngelInventory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				780A2F4C18BF800B00C85F05 /* Debug */,
+				780A2F4D18BF800B00C85F05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		780A2F4E18BF800B00C85F05 /* Build configuration list for PBXNativeTarget "AngelInventory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				780A2F4F18BF800B00C85F05 /* Debug */,
+				780A2F5018BF800B00C85F05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		780A2F5118BF800B00C85F05 /* Build configuration list for PBXNativeTarget "AngelInventoryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				780A2F5218BF800B00C85F05 /* Debug */,
+				780A2F5318BF800B00C85F05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 780A2F1118BF800B00C85F05 /* Project object */;
+}
